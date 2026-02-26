@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Annexes Mémoire DEC | Investissement Touristique Franco-Marocain</title>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&family=DM+Sans:wght@300;400;500&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ocre: #C4832A;
+    --terracotta: #B85C38;
+    --sable: #F5ECD7;
+    --sable-light: #FAF5EC;
+    --vert-menthe: #2D6A4F;
+    --bleu-nuit: #1A2540;
+    --gold: #D4A853;
+    --gold-light: #E8C97A;
+    --rouge-maroc: #C1272D;
+    --charbon: #2B2B2B;
+    --gris-doux: #7A7060;
+  }
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html { scroll-behavior: smooth; }
+
+  body {
+    background: var(--sable-light);
+    color: var(--charbon);
+    font-family: 'DM Sans', sans-serif;
+    font-weight: 300;
+    overflow-x: hidden;
+  }
+
+  /* ── ZELLIGE PATTERN SVG background ── */
+  body::before {
+    content: '';
+    position: fixed;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='60' height='60'%3E%3Cpath d='M30 0 L60 30 L30 60 L0 30Z' fill='none' stroke='%23C4832A' stroke-width='0.3' opacity='0.12'/%3E%3Cpath d='M15 15 L45 15 L45 45 L15 45Z' fill='none' stroke='%23C4832A' stroke-width='0.3' opacity='0.08'/%3E%3C/svg%3E");
+    pointer-events: none;
+    z-index: 0;
+  }
+
+  /* ── NAV ── */
+  nav {
+    position: fixed;
+    top: 0; left: 0; right: 0;
+    z-index: 100;
+    background: rgba(26, 37, 64, 0.97);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(196,131,42,0.3);
+    padding: 0 2.5rem;
+    height: 62px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+
+  .nav-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    font-weight: 400;
+    color: var(--gold-light);
+    letter-spacing: 0.05em;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .nav-brand .sep { color: var(--ocre); opacity: 0.5; }
+
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+
+  .nav-links a {
+    color: rgba(245,236,215,0.65);
+    text-decoration: none;
+    font-size: 0.78rem;
+    font-weight: 400;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    transition: color 0.3s;
+  }
+
+  .nav-links a:hover { color: var(--gold-light); }
+
+  /* ── HERO ── */
+  .hero {
+    position: relative;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+    padding: 8rem 6rem 5rem;
+    overflow: hidden;
+    z-index: 1;
+  }
+
+  .hero-bg {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(135deg, var(--bleu-nuit) 0%, #0f1829 50%, #1d1208 100%);
+    z-index: -2;
+  }
+
+  /* Arch decorative shape */
+  .hero-arch {
+    position: absolute;
+    right: -80px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 520px;
+    height: 680px;
+    z-index: -1;
+    opacity: 0.18;
+  }
+
+  .hero-arch svg { width: 100%; height: 100%; }
+
+  /* Decorative gold line */
+  .hero::after {
+    content: '';
+    position: absolute;
+    left: 6rem;
+    bottom: 0;
+    width: 1px;
+    height: 80px;
+    background: linear-gradient(to bottom, var(--gold), transparent);
+  }
+
+  .hero-tag {
+    font-size: 0.72rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+
+  .hero-tag::before {
+    content: '';
+    width: 40px;
+    height: 1px;
+    background: var(--gold);
+    opacity: 0.6;
+  }
+
+  .hero h1 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: clamp(2.8rem, 5.5vw, 5rem);
+    font-weight: 300;
+    line-height: 1.1;
+    color: var(--sable);
+    max-width: 700px;
+    margin-bottom: 1rem;
+  }
+
+  .hero h1 em {
+    font-style: italic;
+    color: var(--gold-light);
+  }
+
+  .hero-subtitle {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.25rem;
+    font-weight: 300;
+    font-style: italic;
+    color: rgba(245,236,215,0.55);
+    margin-bottom: 2.5rem;
+    max-width: 520px;
+    line-height: 1.6;
+  }
+
+  .hero-meta {
+    display: flex;
+    gap: 3rem;
+    margin-bottom: 3.5rem;
+  }
+
+  .hero-meta-item {
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+  }
+
+  .hero-meta-item .label {
+    font-size: 0.65rem;
+    letter-spacing: 0.2em;
+    text-transform: uppercase;
+    color: var(--gold);
+    opacity: 0.7;
+  }
+
+  .hero-meta-item .value {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.05rem;
+    color: rgba(245,236,215,0.85);
+  }
+
+  .hero-badges {
+    display: flex;
+    gap: 1rem;
+    flex-wrap: wrap;
+  }
+
+  .hero-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.5rem 1.2rem;
+    border: 1px solid rgba(196,131,42,0.35);
+    border-radius: 2px;
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--gold-light);
+    background: rgba(196,131,42,0.08);
+    text-decoration: none;
+    transition: all 0.3s;
+  }
+
+  .hero-badge:hover {
+    background: rgba(196,131,42,0.18);
+    border-color: var(--gold);
+  }
+
+  /* Floating stat cards */
+  .hero-stats {
+    position: absolute;
+    right: 6rem;
+    top: 50%;
+    transform: translateY(-50%);
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  .stat-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(196,131,42,0.2);
+    border-left: 3px solid var(--gold);
+    padding: 1.2rem 1.8rem;
+    min-width: 180px;
+    backdrop-filter: blur(8px);
+  }
+
+  .stat-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 2.4rem;
+    color: var(--gold-light);
+    line-height: 1;
+    margin-bottom: 0.3rem;
+  }
+
+  .stat-label {
+    font-size: 0.68rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: rgba(245,236,215,0.45);
+  }
+
+  /* ── MAIN CONTENT ── */
+  main {
+    position: relative;
+    z-index: 1;
+  }
+
+  /* ── SECTION HEADER ── */
+  .section-intro {
+    padding: 5rem 6rem 3rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: end;
+    border-bottom: 1px solid rgba(196,131,42,0.15);
+  }
+
+  .section-intro h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.8rem;
+    font-weight: 300;
+    line-height: 1.2;
+    color: var(--bleu-nuit);
+  }
+
+  .section-intro h2 span {
+    color: var(--ocre);
+    font-style: italic;
+  }
+
+  .section-intro p {
+    font-size: 0.92rem;
+    line-height: 1.75;
+    color: var(--gris-doux);
+    padding-top: 1rem;
+    border-top: 1px solid rgba(196,131,42,0.2);
+  }
+
+  /* ── PART HEADERS ── */
+  .part-header {
+    padding: 4rem 6rem 1.5rem;
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+  }
+
+  .part-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 5rem;
+    font-weight: 700;
+    color: var(--ocre);
+    opacity: 0.15;
+    line-height: 1;
+    flex-shrink: 0;
+  }
+
+  .part-info {}
+
+  .part-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--ocre);
+    margin-bottom: 0.4rem;
+  }
+
+  .part-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: var(--bleu-nuit);
+    line-height: 1.3;
+  }
+
+  /* ── TOOLS GRID ── */
+  .tools-grid {
+    padding: 1rem 6rem 4rem;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+    gap: 1.5rem;
+  }
+
+  /* ── TOOL CARD ── */
+  .tool-card {
+    background: white;
+    border: 1px solid rgba(196,131,42,0.12);
+    border-radius: 3px;
+    overflow: hidden;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+  }
+
+  .tool-card::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 3px;
+    background: linear-gradient(90deg, var(--ocre), var(--gold));
+    opacity: 0;
+    transition: opacity 0.3s;
+  }
+
+  .tool-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 40px rgba(196,131,42,0.12);
+  }
+
+  .tool-card:hover::before { opacity: 1; }
+
+  .card-header {
+    padding: 1.5rem 1.5rem 1rem;
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    border-bottom: 1px solid rgba(196,131,42,0.08);
+  }
+
+  .card-number {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.8rem;
+    color: var(--ocre);
+    opacity: 0.3;
+    line-height: 1;
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+  }
+
+  .card-meta {}
+
+  .card-type {
+    display: inline-block;
+    padding: 0.15rem 0.6rem;
+    border-radius: 2px;
+    font-size: 0.6rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  .type-html { background: rgba(45,106,79,0.1); color: var(--vert-menthe); border: 1px solid rgba(45,106,79,0.2); }
+  .type-excel { background: rgba(45,106,79,0.15); color: #1a5c36; border: 1px solid rgba(45,106,79,0.3); }
+  .type-pdf { background: rgba(193,39,45,0.08); color: var(--rouge-maroc); border: 1px solid rgba(193,39,45,0.2); }
+  .type-word { background: rgba(26,37,64,0.08); color: var(--bleu-nuit); border: 1px solid rgba(26,37,64,0.2); }
+  .type-info { background: rgba(196,131,42,0.1); color: var(--ocre); border: 1px solid rgba(196,131,42,0.25); }
+
+  .card-title {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    font-weight: 600;
+    color: var(--bleu-nuit);
+    line-height: 1.3;
+  }
+
+  .card-body {
+    padding: 1rem 1.5rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 0.75rem;
+  }
+
+  .card-description {
+    font-size: 0.82rem;
+    line-height: 1.65;
+    color: var(--gris-doux);
+  }
+
+  .card-objective {
+    display: flex;
+    gap: 0.5rem;
+    align-items: flex-start;
+    padding: 0.75rem;
+    background: var(--sable-light);
+    border-radius: 2px;
+    border-left: 2px solid var(--gold);
+    margin-top: auto;
+  }
+
+  .card-objective .obj-label {
+    font-size: 0.62rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: var(--ocre);
+    flex-shrink: 0;
+    margin-top: 0.1rem;
+    font-weight: 500;
+  }
+
+  .card-objective p {
+    font-size: 0.78rem;
+    color: var(--gris-doux);
+    line-height: 1.5;
+  }
+
+  .card-footer {
+    padding: 1rem 1.5rem;
+    border-top: 1px solid rgba(196,131,42,0.08);
+    display: flex;
+    gap: 0.75rem;
+  }
+
+  .btn-primary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.2rem;
+    background: var(--bleu-nuit);
+    color: var(--gold-light);
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s;
+    font-weight: 500;
+  }
+
+  .btn-primary:hover { background: var(--ocre); color: white; }
+
+  .btn-secondary {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.55rem 1.2rem;
+    border: 1px solid rgba(196,131,42,0.35);
+    color: var(--ocre);
+    text-decoration: none;
+    font-size: 0.72rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    transition: all 0.3s;
+    font-weight: 400;
+    background: transparent;
+    cursor: pointer;
+  }
+
+  .btn-secondary:hover { background: rgba(196,131,42,0.08); }
+
+  /* ── PRISE DE CONNAISSANCE SECTION ── */
+  #prise-connaissance {
+    background: var(--bleu-nuit);
+    padding: 5rem 6rem;
+    position: relative;
+    overflow: hidden;
+  }
+
+  #prise-connaissance::before {
+    content: '';
+    position: absolute;
+    top: -100px; right: -100px;
+    width: 400px; height: 400px;
+    background: radial-gradient(circle, rgba(196,131,42,0.12) 0%, transparent 70%);
+    pointer-events: none;
+  }
+
+  .pc-header {
+    display: flex;
+    align-items: flex-end;
+    justify-content: space-between;
+    margin-bottom: 3rem;
+  }
+
+  .pc-title-group {}
+
+  .pc-tag {
+    font-size: 0.68rem;
+    letter-spacing: 0.25em;
+    text-transform: uppercase;
+    color: var(--gold);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+
+  .pc-tag::before { content: ''; width: 30px; height: 1px; background: var(--gold); }
+
+  .pc-header h2 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    color: var(--sable);
+  }
+
+  .pc-header h2 em { font-style: italic; color: var(--gold-light); }
+
+  .pc-subtitle {
+    font-size: 0.82rem;
+    color: rgba(245,236,215,0.4);
+    text-align: right;
+    max-width: 240px;
+    line-height: 1.5;
+  }
+
+  .pc-grid {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr 1fr;
+    gap: 1.5rem;
+    margin-bottom: 2rem;
+  }
+
+  .pc-card {
+    background: rgba(255,255,255,0.04);
+    border: 1px solid rgba(196,131,42,0.18);
+    border-radius: 3px;
+    padding: 1.5rem;
+    transition: background 0.3s;
+  }
+
+  .pc-card:hover { background: rgba(255,255,255,0.07); }
+
+  .pc-card.featured {
+    border-color: rgba(196,131,42,0.4);
+    background: rgba(196,131,42,0.06);
+  }
+
+  .pc-card-icon {
+    font-size: 1.8rem;
+    margin-bottom: 0.75rem;
+    line-height: 1;
+  }
+
+  .pc-card h3 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.15rem;
+    font-weight: 600;
+    color: var(--gold-light);
+    margin-bottom: 0.75rem;
+  }
+
+  .pc-card p, .pc-card li {
+    font-size: 0.8rem;
+    line-height: 1.65;
+    color: rgba(245,236,215,0.55);
+  }
+
+  .pc-card ul { list-style: none; padding: 0; }
+
+  .pc-card ul li {
+    padding: 0.3rem 0;
+    border-bottom: 1px solid rgba(196,131,42,0.1);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+
+  .pc-card ul li:last-child { border-bottom: none; }
+
+  .pc-card .highlight {
+    color: var(--gold);
+    font-weight: 500;
+    font-size: 0.78rem;
+  }
+
+  .pc-card .data-point {
+    display: flex;
+    align-items: baseline;
+    gap: 0.4rem;
+    margin-bottom: 0.5rem;
+  }
+
+  .pc-card .data-point .big {
+    font-family: 'Playfair Display', serif;
+    font-size: 2rem;
+    color: var(--gold-light);
+    line-height: 1;
+  }
+
+  .pc-card .data-point .unit {
+    font-size: 0.75rem;
+    color: rgba(245,236,215,0.4);
+  }
+
+  .pc-add-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.6rem 1.4rem;
+    border: 1px dashed rgba(196,131,42,0.4);
+    color: rgba(196,131,42,0.6);
+    font-size: 0.72rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    border-radius: 2px;
+    cursor: pointer;
+    background: transparent;
+    transition: all 0.3s;
+    margin-top: 1rem;
+  }
+
+  .pc-add-btn:hover {
+    border-color: var(--gold);
+    color: var(--gold);
+    background: rgba(196,131,42,0.05);
+  }
+
+  /* ── PROGRAMMES SECTION in PC ── */
+  .programmes-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .programme-card {
+    background: rgba(255,255,255,0.03);
+    border: 1px solid rgba(196,131,42,0.15);
+    padding: 1.25rem 1.5rem;
+    border-radius: 3px;
+    display: flex;
+    gap: 1rem;
+    align-items: flex-start;
+  }
+
+  .programme-badge {
+    font-family: 'Playfair Display', serif;
+    font-size: 0.65rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: var(--bleu-nuit);
+    background: var(--gold);
+    padding: 0.3rem 0.7rem;
+    border-radius: 2px;
+    flex-shrink: 0;
+    font-weight: 700;
+    margin-top: 0.1rem;
+  }
+
+  .programme-info h4 {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1rem;
+    color: var(--gold-light);
+    margin-bottom: 0.4rem;
+  }
+
+  .programme-info p {
+    font-size: 0.77rem;
+    color: rgba(245,236,215,0.45);
+    line-height: 1.5;
+  }
+
+  .programme-points {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.4rem;
+    margin-top: 0.5rem;
+  }
+
+  .programme-point {
+    background: rgba(196,131,42,0.12);
+    border: 1px solid rgba(196,131,42,0.2);
+    color: var(--gold-light);
+    font-size: 0.65rem;
+    padding: 0.2rem 0.6rem;
+    border-radius: 2px;
+    letter-spacing: 0.08em;
+  }
+
+  /* ── DIVIDER ── */
+  .section-divider {
+    height: 1px;
+    background: linear-gradient(90deg, transparent, rgba(196,131,42,0.3), transparent);
+    margin: 0 6rem;
+  }
+
+  /* ── FOOTER ── */
+  footer {
+    background: var(--charbon);
+    padding: 3rem 6rem;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  .footer-brand {
+    font-family: 'Cormorant Garamond', serif;
+    font-size: 1.1rem;
+    color: rgba(245,236,215,0.5);
+  }
+
+  .footer-brand strong { color: var(--gold-light); font-weight: 400; }
+
+  .footer-note {
+    font-size: 0.72rem;
+    color: rgba(245,236,215,0.25);
+    letter-spacing: 0.08em;
+    text-align: right;
+  }
+
+  /* ── ANIMATIONS ── */
+  @keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hero-tag { animation: fadeUp 0.6s ease forwards; }
+  .hero h1 { animation: fadeUp 0.6s 0.1s ease both; }
+  .hero-subtitle { animation: fadeUp 0.6s 0.2s ease both; }
+  .hero-meta { animation: fadeUp 0.6s 0.3s ease both; }
+  .hero-badges { animation: fadeUp 0.6s 0.4s ease both; }
+  .hero-stats { animation: fadeUp 0.6s 0.2s ease both; }
+
+  /* ── RESPONSIVE ── */
+  @media (max-width: 1100px) {
+    .hero { padding: 7rem 3rem 5rem; }
+    .hero-stats { display: none; }
+    .tools-grid { padding: 1rem 3rem 4rem; }
+    .part-header { padding: 4rem 3rem 1.5rem; }
+    .section-intro { padding: 5rem 3rem 3rem; grid-template-columns: 1fr; gap: 2rem; }
+    .section-divider { margin: 0 3rem; }
+    #prise-connaissance { padding: 5rem 3rem; }
+    .pc-grid { grid-template-columns: 1fr; }
+    .programmes-row { grid-template-columns: 1fr; }
+    footer { padding: 3rem; }
+  }
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav>
+  <div class="nav-brand">
+    🇲🇦 <span class="sep">|</span> Mémoire DEC — Annexes & Outils Pratiques
+  </div>
+  <ul class="nav-links">
+    <li><a href="#partie1">Partie I</a></li>
+    <li><a href="#prise-connaissance">Maroc</a></li>
+    <li><a href="#about">À propos</a></li>
+  </ul>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-bg"></div>
+  <div class="hero-arch">
+    <svg viewBox="0 0 300 400" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <path d="M150 20 C60 20, 20 100, 20 200 L20 380 L280 380 L280 200 C280 100, 240 20, 150 20 Z" stroke="#C4832A" stroke-width="1.5" fill="none"/>
+      <path d="M150 50 C80 50, 50 115, 50 200 L50 370 L250 370 L250 200 C250 115, 220 50, 150 50 Z" stroke="#C4832A" stroke-width="0.7" fill="none" opacity="0.5"/>
+      <!-- Geometric zellige inner pattern -->
+      <g opacity="0.4">
+        <path d="M100 200 L150 150 L200 200 L150 250 Z" stroke="#D4A853" stroke-width="0.8" fill="none"/>
+        <path d="M120 200 L150 170 L180 200 L150 230 Z" stroke="#D4A853" stroke-width="0.5" fill="none"/>
+        <circle cx="150" cy="200" r="8" stroke="#D4A853" stroke-width="0.8" fill="none"/>
+      </g>
+    </svg>
+  </div>
+
+  <div class="hero-tag">Diplôme d'Expertise Comptable — Session Mai 2026</div>
+
+  <h1>Investissement Touristique<br>au <em>Maroc</em><br>Guide d'Accompagnement</h1>
+
+  <p class="hero-subtitle">
+    Outils pratiques pour l'expert-comptable spécialisé dans l'accompagnement des investisseurs franco-marocains dans l'immobilier touristique
+  </p>
+
+  <div class="hero-meta">
+    <div class="hero-meta-item">
+      <span class="label">Candidate</span>
+      <span class="value">Meryem IBRAHYM</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">Session</span>
+      <span class="value">Mai 2026</span>
+    </div>
+    <div class="hero-meta-item">
+      <span class="label">Spécialisation</span>
+      <span class="value">Franco-Marocaine</span>
+    </div>
+  </div>
+
+  <div class="hero-badges">
+    <a href="#partie1" class="hero-badge">↓ Outils pratiques</a>
+    <a href="#prise-connaissance" class="hero-badge">🇲🇦 Fiche Maroc</a>
+  </div>
+
+  <div class="hero-stats">
+    <div class="stat-card">
+      <div class="stat-number">8</div>
+      <div class="stat-label">Outils pratiques</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">10</div>
+      <div class="stat-label">Étapes de mission</div>
+    </div>
+    <div class="stat-card">
+      <div class="stat-number">3</div>
+      <div class="stat-label">Profils investisseurs</div>
+    </div>
+  </div>
+</section>
+
+<!-- INTRO -->
+<section class="section-intro">
+  <div>
+    <h2>Les <span>outils pratiques</span><br>de la mission</h2>
+  </div>
+  <div>
+    <p>Ces outils constituent le cœur opérationnel du mémoire. Conçus pour être immédiatement exploitables par l'expert-comptable, ils couvrent l'ensemble des étapes de la mission d'accompagnement à l'implantation touristique au Maroc — du premier contact avec l'investisseur jusqu'au rapatriement des fonds.</p>
+  </div>
+</section>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PARTIE I -->
+<!-- ═══════════════════════════════════════ -->
+<section id="partie1">
+  <div class="part-header">
+    <div class="part-number">I</div>
+    <div class="part-info">
+      <div class="part-tag">Partie I — Connaissance & Cadrage</div>
+      <div class="part-title">Comprendre le contexte, identifier les investisseurs<br>et cadrer la mission franco-marocaine</div>
+    </div>
+  </div>
+
+  <div class="tools-grid">
+
+    <!-- OUTIL 1 -->
+    <div class="tool-card">
+      <div class="card-header">
+        <div class="card-number">01</div>
+        <div class="card-meta">
+          <span class="card-type type-pdf">PDF</span>
+          <div class="card-title">Fiche Pays — Le Maroc</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">Synthèse géopolitique, économique et touristique du Maroc à destination de l'expert-comptable. Comprend les chiffres clés du tourisme, la carte des destinations, les programmes incitatifs GO SIYAHA et MOUKAWALA SIYAHIA.</p>
+        <div class="card-objective">
+          <span class="obj-label">Objectif</span>
+          <p>Offrir une vision d'ensemble du territoire marocain pour contextualiser la mission auprès des investisseurs et structurer le diagnostic initial.</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="outils/OUTIL_1_-_FICHE_PAYS.pdf" class="btn-primary" target="_blank">↓ Télécharger</a>
+      </div>
+    </div>
+
+    <!-- OUTIL 2 -->
+    <div class="tool-card">
+      <div class="card-header">
+        <div class="card-number">02</div>
+        <div class="card-meta">
+          <span class="card-type type-pdf">PDF</span>
+          <div class="card-title">Fiches Personas — 3 Profils Investisseurs</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">Portraits détaillés des trois typologies d'investisseurs cibles : Bruno DUPOND (entrepreneur français), Farah BENHAJI (MRE cadre), Chloé & Karim BENALI (couple franco-marocain). Chaque fiche présente le profil, les motivations, les craintes et les enjeux fiscaux spécifiques.</p>
+        <div class="card-objective">
+          <span class="obj-label">Objectif</span>
+          <p>Permettre à l'expert-comptable d'adapter son approche commerciale et sa posture de conseil à chaque profil d'investisseur.</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="outils/OUTIL_2_FICHES_PERSONAS_PDF.pdf" class="btn-primary" target="_blank">↓ Télécharger</a>
+      </div>
+    </div>
+
+    <!-- OUTIL 3 -->
+    <div class="tool-card">
+      <div class="card-header">
+        <div class="card-number">03</div>
+        <div class="card-meta">
+          <span class="card-type type-word">Word</span>
+          <div class="card-title">Guide d'Utilisation du Chatbot & Lien GPT</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">Guide pratique pour l'utilisation du chatbot IA spécialisé dans l'accompagnement franco-marocain. Inclut les instructions de prise en main, les bonnes pratiques de prompting et l'accès au GPT personnalisé développé pour la mission.</p>
+        <div class="card-objective">
+          <span class="obj-label">Objectif</span>
+          <p>Fournir un outil d'assistance numérique instantanée pour les questions réglementaires et fiscales franco-marocaines récurrentes.</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="outils/OUTIL_3_GUIDE_UTILISATION_CHATBOT___LIEN_GPT_.docx" class="btn-primary" target="_blank">↓ Télécharger</a>
+      </div>
+    </div>
+
+    <!-- OUTIL 4 -->
+    <div class="tool-card">
+      <div class="card-header">
+        <div class="card-number">04</div>
+        <div class="card-meta">
+          <span class="card-type type-pdf">PDF</span>
+          <span class="card-type type-excel" style="margin-left:0.3rem;">Excel</span>
+          <div class="card-title">Matrice RACI — Répartition des Travaux</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">Cartographie complète des responsabilités entre l'expert-comptable français, le confrère marocain (OECM) et le client sur l'ensemble des 20 tâches de la mission. Couvre la prise de connaissance, les due diligences, la structuration juridique, le suivi comptable transfrontalier et l'accompagnement fiscal du dirigeant.</p>
+        <div class="card-objective">
+          <span class="obj-label">Objectif</span>
+          <p>Clarifier les rôles et éviter les doublons dans une mission tripartite complexe franco-marocaine.</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="outils/OUTIL_4_MATRICE_RACI_.pdf" class="btn-primary" target="_blank">↓ PDF</a>
+        <a href="outils/OUTIL_4_EXCEL_MATRICE_RACI.xlsx" class="btn-secondary" target="_blank">↓ Excel</a>
+      </div>
+    </div>
+
+    <!-- OUTIL 5 -->
+    <div class="tool-card">
+      <div class="card-header">
+        <div class="card-number">05</div>
+        <div class="card-meta">
+          <span class="card-type type-pdf">PDF</span>
+          <div class="card-title">Kit Mission — Création d'Offres & Packages</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">Structure des trois niveaux d'offre de la mission franco-marocaine : BASIC (accompagnement initial et mise en relation), COMPLET (optimisation financière et fiscale), EXCELLENCE (accompagnement VIP de bout en bout). Présentation orientée client pour la prospection.</p>
+        <div class="card-objective">
+          <span class="obj-label">Objectif</span>
+          <p>Proposer une grille tarifaire modulable et un positionnement commercial clair pour la mission d'accompagnement.</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="outils/OUTIL_5_KIT_MISSION_-_CREATION_OFFRE_PACKAGES_.pdf" class="btn-primary" target="_blank">↓ Télécharger</a>
+      </div>
+    </div>
+
+    <!-- OUTIL 6 -->
+    <div class="tool-card">
+      <div class="card-header">
+        <div class="card-number">06</div>
+        <div class="card-meta">
+          <span class="card-type type-pdf">PDF</span>
+          <span class="card-type type-word" style="margin-left:0.3rem;">Word</span>
+          <div class="card-title">Kit Mission — Questionnaire d'Acceptation & Lettre de Mission</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">Dossier complet d'entrée en relation comprenant : questionnaire d'acceptation client (LBC/FT, prise de connaissance, moralité), fiches d'identification personne physique et morale, fiche bénéficiaires effectifs, détermination du niveau de risque, et lettre de mission conforme au Code de déontologie (art. 151).</p>
+        <div class="card-objective">
+          <span class="obj-label">Objectif</span>
+          <p>Sécuriser l'entrée en relation et formaliser la mission dans le respect des normes professionnelles CNOEC applicables.</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="outils/OUTIL_6_-_KIT_MISSION_-_LETTRE_DE_MISSION_VERSION_PDF.pdf" class="btn-primary" target="_blank">↓ Lettre PDF</a>
+        <a href="outils/OUTIL_6_-_KIT_MISSION_-_LETTRE_DE_MISSION_VERSION_WORD.docx" class="btn-secondary" target="_blank">↓ Lettre Word</a>
+      </div>
+      <div class="card-footer" style="border-top:none; padding-top:0;">
+        <a href="outils/OUTIL_6_-_KIT_MISSION_QUESTIONNAIRE_ACCEPTATION_MISSION_VERSION_PDF.pdf" class="btn-secondary" target="_blank">↓ Questionnaire PDF</a>
+        <a href="outils/OUTIL_6_-_KIT_MISSION_QUESTIONNAIRE_ACCEPTATION_MISSION_VERSION_WORD_.docx" class="btn-secondary" target="_blank">↓ Questionnaire Word</a>
+      </div>
+    </div>
+
+    <!-- OUTIL 7 -->
+    <div class="tool-card">
+      <div class="card-header">
+        <div class="card-number">07</div>
+        <div class="card-meta">
+          <span class="card-type type-pdf">PDF</span>
+          <div class="card-title">Plan de Formation & d'Intégration du Personnel</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">Programme structuré en 4 axes pour former et fidéliser les collaborateurs sur la mission franco-marocaine : création de l'adhésion, 7 modules techniques spécialisés (Loi 80-14, CGNC, convention fiscale, yield management…), fidélisation par la reconnaissance, et accompagnement vers l'autonomie.</p>
+        <div class="card-objective">
+          <span class="obj-label">Objectif</span>
+          <p>Transférer les compétences spécifiques à la mission au sein du cabinet et construire une équipe autonome sur le périmètre franco-marocain.</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="outils/OUTILS_7_PLAN_DE_FORMATION_PDF.pdf" class="btn-primary" target="_blank">↓ Télécharger</a>
+      </div>
+    </div>
+
+    <!-- OUTIL 8 -->
+    <div class="tool-card">
+      <div class="card-header">
+        <div class="card-number">08</div>
+        <div class="card-meta">
+          <span class="card-type type-pdf">PDF</span>
+          <div class="card-title">Tableau des Organismes Partenaires</div>
+        </div>
+      </div>
+      <div class="card-body">
+        <p class="card-description">Référentiel complet des partenaires de la mission : cabinets marocains, ordres professionnels (OEC Maroc, CFCIM, CGEM), institutions financières (CCG, banques), et les 10 organismes incontournables de l'environnement marocain (DGI, ANCFCC, Office des Changes, CRI, CNSS, Direction Régionale du Tourisme…).</p>
+        <div class="card-objective">
+          <span class="obj-label">Objectif</span>
+          <p>Constituer et structurer le réseau partenarial indispensable pour sécuriser juridiquement, fiscalement et financièrement les dossiers clients.</p>
+        </div>
+      </div>
+      <div class="card-footer">
+        <a href="outils/OUTIL_8_-_TABLEAU_DES_PARTENAIRES_.pdf" class="btn-primary" target="_blank">↓ Télécharger</a>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<div class="section-divider"></div>
+
+<!-- ═══════════════════════════════════════ -->
+<!-- PRISE DE CONNAISSANCE — MAROC -->
+<!-- ═══════════════════════════════════════ -->
+<section id="prise-connaissance">
+  <div class="pc-header">
+    <div class="pc-title-group">
+      <div class="pc-tag">Ressources contextuelles</div>
+      <h2>Le Maroc en <em>chiffres</em></h2>
+    </div>
+    <div class="pc-subtitle">Données de référence pour contextualiser la mission</div>
+  </div>
+
+  <div class="pc-grid">
+
+    <!-- Card 1 : Repères généraux -->
+    <div class="pc-card featured">
+      <div class="pc-card-icon">🗺️</div>
+      <h3>Repères géopolitiques</h3>
+      <ul>
+        <li><span>Capitale</span><span class="highlight">Rabat</span></li>
+        <li><span>Superficie</span><span class="highlight">710 850 km²</span></li>
+        <li><span>Population</span><span class="highlight">≃ 38,4 M hab.</span></li>
+        <li><span>Monnaie</span><span class="highlight">MAD — 10 ≃ 1 €</span></li>
+        <li><span>Régime</span><span class="highlight">Monarchie const.</span></li>
+        <li><span>Chef d'État</span><span class="highlight">Roi Mohammed VI</span></li>
+        <li><span>Langues</span><span class="highlight">Arabe, Amazighe, Fr.</span></li>
+      </ul>
+    </div>
+
+    <!-- Card 2 : Économie -->
+    <div class="pc-card">
+      <div class="pc-card-icon">📈</div>
+      <h3>Données économiques</h3>
+      <div class="data-point">
+        <span class="big">+4,4</span><span class="unit">% PIB 2025</span>
+      </div>
+      <ul>
+        <li><span>PIB/habitant</span><span class="highlight">≃ 4 763 $</span></li>
+        <li><span>Secteurs clés</span><span class="highlight">Tourisme, Auto, Phos.</span></li>
+        <li><span>Convention fiscale FR</span><span class="highlight">29 mai 1970</span></li>
+        <li><span>Référentiel compta</span><span class="highlight">CGNC</span></li>
+      </ul>
+    </div>
+
+    <!-- Card 3 : Tourisme -->
+    <div class="pc-card">
+      <div class="pc-card-icon">🏛️</div>
+      <h3>Tourisme marocain</h3>
+      <div class="data-point">
+        <span class="big">19,8</span><span class="unit">M touristes 2025</span>
+      </div>
+      <ul>
+        <li><span>Recettes</span><span class="highlight">124 Mds MAD</span></li>
+        <li><span>Classement Afrique</span><span class="highlight">N°1</span></li>
+        <li><span>Objectif 2030</span><span class="highlight">26 M touristes</span></li>
+        <li><span>Cadre légal</span><span class="highlight">Loi 80-14</span></li>
+      </ul>
+    </div>
+
+  </div>
+
+  <!-- Programmes incitatifs -->
+  <div class="programmes-row">
+    <div class="programme-card">
+      <span class="programme-badge">GO<br>SIYAHA</span>
+      <div class="programme-info">
+        <h4>Programme GO SIYAHA</h4>
+        <p>Programme d'appui de l'Agence PME aux établissements touristiques marocains, axé sur l'investissement, l'assistance technique et la croissance verte.</p>
+        <div class="programme-points">
+          <span class="programme-point">Appui à l'investissement</span>
+          <span class="programme-point">Assistance technique</span>
+          <span class="programme-point">Croissance verte</span>
+        </div>
+      </div>
+    </div>
+    <div class="programme-card">
+      <span class="programme-badge">MOUKA<br>WALA</span>
+      <div class="programme-info">
+        <h4>Moukawala Siyahia (SMIT)</h4>
+        <p>Subvention directe proposée par la Société Marocaine d'Ingénierie Touristique pour la modernisation et la restructuration des hébergements touristiques.</p>
+        <div class="programme-points">
+          <span class="programme-point">Prime technique</span>
+          <span class="programme-point">Prime d'investissement</span>
+          <span class="programme-point">Restructuration</span>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button class="pc-add-btn" onclick="alert('Fonctionnalité à venir : ajout de fiches contextuelles personnalisées')">
+    + Ajouter une fiche contextuelle
+  </button>
+
+</section>
+
+<!-- FOOTER -->
+<footer id="about">
+  <div class="footer-brand">
+    Mémoire DEC — Session Mai 2026<br>
+    <strong>Meryem IBRAHYM</strong> · Expert-Comptable Stagiaire
+  </div>
+  <div class="footer-note">
+    Mission d'accompagnement à l'implantation touristique au Maroc<br>
+    Accompagnement des investisseurs franco-marocains<br>
+    © 2026 — Production personnelle
+  </div>
+</footer>
+
+</body>
+</html>
